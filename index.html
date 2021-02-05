@@ -1,0 +1,198 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>BlCodeScraper</h1>
+				<p>Tool zum Finden und Einlösen von SHIFT-Codes für die Borderlands Spiele</p>
+
+				<h2>Umgesetzt mit</h2>
+				<img style="height: 100px; margin-right: 30px;" src="images/logos/electron.png">
+				<img style="height: 100px;" src="images/logos/spring.png">
+
+				<hr>
+				<p>Projekt von Brice Dorsey und Marc Störmer</p>
+			</section>
+
+			<section>
+				<h1>Komponenten</h1>
+				<ul>
+					<li>Web scraper (Java) - <p style="display: inline; color:aquamarine">Marc</p>
+					</li>
+					<li>API (Java Spring) - <p style="display: inline; color:aquamarine">Brice</p>
+					</li>
+					<li>Datenbank (MySQL) - <p style="display: inline; color:aquamarine">Brice</p>
+					</li>
+					<hr>
+					<li>Plattformunabhängiger Client (Electron) - <p style="display: inline; color:aquamarine">Marc</p>
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				<section>
+					<h1>Web scraper</h1>
+					<div style="float: left; width: 65%;">
+						<img src="images/web_scraper/orcz.png">
+					</div>
+					<div style="float: right; width: 30%;">
+						<ul style="padding-top: 15px;">
+							<li style="margin-bottom: 15px; font-size: 20px"><a
+									href="http://orcz.com/Borderlands_2:_Golden_Key">http://orcz.com</a> sammelt
+								SHIFT-Codes in Tabellenform</li>
+							<li style="font-size: 20px">Lizenz: Creative Commons Attribution Non-Commercial Share Alike
+							</li>
+							<hr>
+							<li style="margin-bottom: 15px; font-size: 20px">
+								<p style="display: inline; color:aquamarine">Java Web scraper:</p> 1x pro Tag Auslesen
+								der Codes
+							</li>
+							<li style="font-size: 20px">Sortieren, Filtern und Persistieren der Codes</li>
+						</ul>
+					</div>
+				</section>
+				<section>
+					<h2>Web scraper : Quellen</h2>
+					<p style="color:aquamarine">Alle genutzten Tabellen</p>
+					<ul>
+						<li style="font-size: 20px"><a href="http://orcz.com/Borderlands:_Golden_Key">Borderlands (1): http://orcz.com/Borderlands:_Golden_Key</a></li>
+						<li style="font-size: 20px"><a href="http://orcz.com/Borderlands_Pre-Sequel:_Shift_Codes">Borderlands Pre Sequel: http://orcz.com/Borderlands_Pre-Sequel:_Shift_Codes</a></li>
+						<li style="font-size: 20px"><a href="http://orcz.com/Borderlands_2:_Golden_Key">Borderlands 2: http://orcz.com/Borderlands_2:_Golden_Key</a></li>
+						<li style="font-size: 20px"><a href="http://orcz.com/Borderlands_3:_Shift_Codes">Borderlands 3: http://orcz.com/Borderlands_3:_Shift_Codes</a></li>
+					</ul>
+					<p style="color:aquamarine">Daten von orcz.com bereitgestellt unter der Lizenz:</p>
+					<p style="font-size: 20px">Creative Commons Attribution Non-Commercial Share Alike</p>
+				</section>
+			</section>
+
+			<section>
+				<h1>API</h1>
+			</section>
+
+			<section>
+				<h1>Datenbank</h1>
+			</section>
+
+			<section>
+				<section>
+					<h1>Electron Client</h1>
+					<p>HTML / CSS / JS</p>
+					<img style="width: 80%;" src="images/client/default.png">
+				</section>
+				<section>
+					<h2>Anmelden bei SHIFT</h2>
+					<div style="float: left; width: 65%;">
+						<img src="images/client/SHIFT_login.png">
+					</div>
+					<div style="float: right; width: 30%;">
+						<ul style="padding-top: 15px;">
+							<li style="margin-bottom: 15px; font-size: 20px">Nutzer wird aufgefordert sein SHIFT-Konto zu verbinden</li>
+							<li style="margin-bottom: 15px; font-size: 20px">Der Client verwendet dafür die libary <a href="https://github.com/trs/shift-code/tree/master/api">@shift-code/api</a> von Tyler Stewart</li>
+							<li style="margin-bottom: 15px; font-size: 20px"><a href="https://shift.gearboxsoftware.com/account">SHIFT</a> ist der Service von gearbox software, der sich um die Ingame-Belohnungen der Borderlandsspiele kümmert.</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h2>Client bei API authentifizieren</h2>
+						<p style="color:aquamarine;">Auth ohne Login?</p>
+						<ul style="padding-top: 15px;">
+							<li style="margin-bottom: 15px; font-size: 20px">Nutzer soll keinen Account bei uns erstellen, da er schon seinem SHIFT-Account angeben muss. <br>(Nur Clientseitig)</li>
+							<li style="margin-bottom: 15px; font-size: 20px">Client erstellt automatisch einen Key</li>
+							<li style="margin-bottom: 15px; font-size: 20px">Key wird der API gemeldet und nachfolgend als Auth verwendet.</li>
+
+						</ul>
+						<p style="color:aquamarine;">Beispiel-Key:</p>
+						<p style="font-size: 20px;"><br>e025db40-e43a-435e-9498-cf4455830fe086f47b3a-7dbf-4809-a0b2-473c5c383351<br>df2a6072-f42f-403b-80ca-726858d8e66d2e6c8299-c381-4739-aed0-7f52ded7e2cc</p>
+				</section>
+
+				<section>
+					<h2>Codes abfragen</h2>
+					<div style="float: left; width: 65%;">
+						<img src="images/client/default_with_name.png">
+					</div>
+					<div style="float: right; width: 30%;">
+						<p style="font-size: 25px; color:aquamarine">Funktionen auf dieser Oberfläche</h3>
+						<ul style="padding-top: 15px;">
+							<li style="margin-bottom: 15px; font-size: 20px;">Anzeigen der Codes nach Spiel und Platform</li>
+							<li style="margin-bottom: 15px; font-size: 20px;">Eingelöste Codes anzeigen (unsere API)</li>
+							<li style="margin-bottom: 15px; font-size: 20px;">Code als Eingelöst markieren (unsere API)</li>
+							<li style="margin-bottom: 15px; font-size: 20px;">Code in die Zwischenablage kopieren</li>
+							<li style="margin-bottom: 15px; font-size: 20px;">Code auf SHIFT einlösen</li>
+							<hr>
+							<li style="margin-bottom: 15px; font-size: 20px;">SHIFT-Login triggern <br>(ändern oder einloggen)</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h2>Eingelöste Codes anzeigen</h2>
+					<div style="float: left; width: 65%;">
+						<img src="images/client/redeemed.png">
+					</div>
+					<div style="float: right; width: 30%;">
+						<p style="font-size: 25px; color:aquamarine">Funktionen auf dieser Oberfläche</h3>
+						<ul style="padding-top: 15px;">
+							<li style="margin-bottom: 15px; font-size: 20px;">Anzeigen aller eingelösten Codes (unsere API)</li>
+							<li style="margin-bottom: 15px; font-size: 20px;">Kopieren eines Codes in die Zwischenablage</li>
+							<li style="margin-bottom: 15px; font-size: 20px;">Code aus der Liste der eingelösten Codes entfernen (unsere API)</li>
+						</ul>
+					</div>
+				</section>
+
+			</section>
+
+			<section>
+				<h2>Nicht umgesetzte Funktionen</h2>
+					<ul style="padding-top: 15px;">
+						<li style="margin-bottom: 15px; font-size: 20px;">Code als HTML-Page teilen: War nur eine komplizierte Art des Kopierens</li>
+						<li style="margin-bottom: 15px; font-size: 20px;">Speichern des SHIFT-Accounts: Datensicherheit - besser nichts im Klartext speichern</li>
+						<li style="margin-bottom: 15px; font-size: 20px;">Manuelles Hinzufügen von Codes durch Admins: Wir können nun unabhängig von der API eigene Tabellen erstellen und diese scrapen lassen</li>
+					</ul>
+			</section>
+
+			<section>
+				<h1>DEMO</h1>
+
+				<img style="width: 30%;" src="images/logos/Beuth-Logo_single.png">
+
+				<p>Beuth Hochschule für Technik Berlin</p>
+				<p><p style="color:aquamarine">Modul:</p> Enterprise Web Development (WiSe 2020/2021)</p>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
