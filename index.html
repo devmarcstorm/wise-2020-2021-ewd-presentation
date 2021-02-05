@@ -41,7 +41,8 @@
 						<li>Datenbank (MySQL) - <p style="display: inline; color:aquamarine">Brice</p>
 						</li>
 						<hr>
-						<li>Plattformunabhängiger Client (Electron) - <p style="display: inline; color:aquamarine">Marc</p>
+						<li>Plattformunabhängiger Client (Electron) - <p style="display: inline; color:aquamarine">Marc
+							</p>
 						</li>
 					</ul>
 				</section>
@@ -84,10 +85,15 @@
 					<h2>Web scraper : Quellen</h2>
 					<p style="color:aquamarine">Alle genutzten Tabellen</p>
 					<ul>
-						<li style="font-size: 20px"><a href="http://orcz.com/Borderlands:_Golden_Key">Borderlands (1): http://orcz.com/Borderlands:_Golden_Key</a></li>
-						<li style="font-size: 20px"><a href="http://orcz.com/Borderlands_Pre-Sequel:_Shift_Codes">Borderlands Pre Sequel: http://orcz.com/Borderlands_Pre-Sequel:_Shift_Codes</a></li>
-						<li style="font-size: 20px"><a href="http://orcz.com/Borderlands_2:_Golden_Key">Borderlands 2: http://orcz.com/Borderlands_2:_Golden_Key</a></li>
-						<li style="font-size: 20px"><a href="http://orcz.com/Borderlands_3:_Shift_Codes">Borderlands 3: http://orcz.com/Borderlands_3:_Shift_Codes</a></li>
+						<li style="font-size: 20px"><a href="http://orcz.com/Borderlands:_Golden_Key">Borderlands (1):
+								http://orcz.com/Borderlands:_Golden_Key</a></li>
+						<li style="font-size: 20px"><a
+								href="http://orcz.com/Borderlands_Pre-Sequel:_Shift_Codes">Borderlands Pre Sequel:
+								http://orcz.com/Borderlands_Pre-Sequel:_Shift_Codes</a></li>
+						<li style="font-size: 20px"><a href="http://orcz.com/Borderlands_2:_Golden_Key">Borderlands 2:
+								http://orcz.com/Borderlands_2:_Golden_Key</a></li>
+						<li style="font-size: 20px"><a href="http://orcz.com/Borderlands_3:_Shift_Codes">Borderlands 3:
+								http://orcz.com/Borderlands_3:_Shift_Codes</a></li>
 					</ul>
 					<p style="color:aquamarine">Daten von orcz.com bereitgestellt unter der Lizenz:</p>
 					<p style="font-size: 20px">Creative Commons Attribution Non-Commercial Share Alike</p>
@@ -96,10 +102,95 @@
 
 			<section>
 				<h1>API</h1>
+
+				<section>
+					<div style="float: left; width: 65%;">
+						<img src="images/RestAPI/SpringBoot.png">
+					</div>
+					<div style="float: right; width: 30%;">
+						<ul style="padding-top: 15px;">
+							<li style="margin-bottom: 15px; font-size: 20px">Für Entwicklung von der Rest-API</li>
+							<li style="margin-bottom: 15px; font-size: 20px">PostMan für die erste Tests</li>
+							<li style="margin-bottom: 15px; font-size: 20px">Lombock</li>
+
+						</ul>
+					</div>
+				</section>
+
+
+
+				<section>
+					<div style="float: left; width: 65%;">
+						<img src="images/RestAPI/CodesJson.png">
+					</div>
+					<div style="float: right; width: 30%;">
+						<ul style="padding-top: 15px;">
+							<li style="margin-bottom: 15px; font-size: 20px">SHIFT-Codes in Json-format</li>
+						</ul>
+					</div>
+				</section>
+
 			</section>
 
 			<section>
 				<h1>Datenbank</h1>
+				<section>
+					<div style="float: left; width: 65%;">
+						<img src="images/RestAPI/mySql.png">
+					</div>
+					<div style="float: right; width: 30%;">
+						<ul style="padding-top: 15px;">
+							<li style="font-size: 20px">MySQL für die Datenpersistenz</li>
+							<hr>
+						</ul>
+				</section>
+
+
+				<section>
+					<div style="float: left; width: 65%;">
+						<img src="images/RestAPI/Codes_1.png">
+					</div>
+					<div style="float: right; width: 30%;">
+						<ul style="padding-top: 15px;">
+							<li style="margin-bottom: 15px; font-size: 20px">Gescrapte codes werden in der Datenbank
+								gespeichert</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<div style="float: left; width: 65%;">
+						<img src="images/RestAPI/Users.png">
+					</div>
+					<div style="float: right; width: 30%;">
+						<ul style="padding-top: 15px;">
+							<li style="margin-bottom: 15px; font-size: 20px">Users mit den credentials werden in einer
+								Tabelle angelegt</li>
+							<li style="margin-bottom: 15px; font-size: 20px">Zu jedem user werden auch schon verwendete
+								codes persistiert</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<div style="float: left; width: 65%;">
+						<img src="images/RestAPI/Games.png">
+					</div>
+					<div style="float: right; width: 30%;">
+						<ul style="padding-top: 15px;">
+							<li style="margin-bottom: 15px; font-size: 20px">Schon gescrapte Games werden in einer
+								Tabelle persistiert</li>
+							<li style="margin-bottom: 15px; font-size: 20px">Dies vermeidet eine Tabelle mehrmals zu
+								scrapen, wenn diese schon in der Datenbank persistiert wurde </li>
+							<li style="margin-bottom: 15px; font-size: 20px">Die SHIFT-Codes werden immer erst nach 24
+								Stunden neu gescraped, um nicht zu viele Anfragen
+								an die Webseiten zu stellen</li>
+
+						</ul>
+					</div>
+				</section>
+
+				<p></p>
 			</section>
 
 			<section>
@@ -115,24 +206,33 @@
 					</div>
 					<div style="float: right; width: 30%;">
 						<ul style="padding-top: 15px;">
-							<li style="margin-bottom: 15px; font-size: 20px">Nutzer wird aufgefordert sein SHIFT-Konto zu verbinden</li>
-							<li style="margin-bottom: 15px; font-size: 20px">Der Client verwendet dafür die libary <a href="https://github.com/trs/shift-code/tree/master/api">@shift-code/api</a> von Tyler Stewart</li>
-							<li style="margin-bottom: 15px; font-size: 20px"><a href="https://shift.gearboxsoftware.com/account">SHIFT</a> ist der Service von gearbox software, der sich um die Ingame-Belohnungen der Borderlandsspiele kümmert.</li>
+							<li style="margin-bottom: 15px; font-size: 20px">Nutzer wird aufgefordert sein SHIFT-Konto
+								zu verbinden</li>
+							<li style="margin-bottom: 15px; font-size: 20px">Der Client verwendet dafür die libary <a
+									href="https://github.com/trs/shift-code/tree/master/api">@shift-code/api</a> von
+								Tyler Stewart</li>
+							<li style="margin-bottom: 15px; font-size: 20px"><a
+									href="https://shift.gearboxsoftware.com/account">SHIFT</a> ist der Service von
+								gearbox software, der sich um die Ingame-Belohnungen der Borderlandsspiele kümmert.</li>
 						</ul>
 					</div>
 				</section>
 
 				<section>
 					<h2>Client bei API authentifizieren</h2>
-						<p style="color:aquamarine;">Auth ohne Login?</p>
-						<ul style="padding-top: 15px;">
-							<li style="margin-bottom: 15px; font-size: 20px">Nutzer soll keinen Account bei uns erstellen, da er schon seinem SHIFT-Account angeben muss. <br>(Nur Clientseitig)</li>
-							<li style="margin-bottom: 15px; font-size: 20px">Client erstellt automatisch einen Key</li>
-							<li style="margin-bottom: 15px; font-size: 20px">Key wird der API gemeldet und nachfolgend als Auth verwendet.</li>
+					<p style="color:aquamarine;">Auth ohne Login?</p>
+					<ul style="padding-top: 15px;">
+						<li style="margin-bottom: 15px; font-size: 20px">Nutzer soll keinen Account bei uns erstellen,
+							da er schon seinem SHIFT-Account angeben muss. <br>(Nur Clientseitig)</li>
+						<li style="margin-bottom: 15px; font-size: 20px">Client erstellt automatisch einen Key</li>
+						<li style="margin-bottom: 15px; font-size: 20px">Key wird der API gemeldet und nachfolgend als
+							Auth verwendet.</li>
 
-						</ul>
-						<p style="color:aquamarine;">Beispiel-Key:</p>
-						<p style="font-size: 20px;"><br>e025db40-e43a-435e-9498-cf4455830fe086f47b3a-7dbf-4809-a0b2-473c5c383351<br>df2a6072-f42f-403b-80ca-726858d8e66d2e6c8299-c381-4739-aed0-7f52ded7e2cc</p>
+					</ul>
+					<p style="color:aquamarine;">Beispiel-Key:</p>
+					<p style="font-size: 20px;">
+						<br>e025db40-e43a-435e-9498-cf4455830fe086f47b3a-7dbf-4809-a0b2-473c5c383351<br>df2a6072-f42f-403b-80ca-726858d8e66d2e6c8299-c381-4739-aed0-7f52ded7e2cc
+					</p>
 				</section>
 
 				<section>
@@ -143,13 +243,17 @@
 					<div style="float: right; width: 30%;">
 						<p style="font-size: 25px; color:aquamarine">Funktionen auf dieser Oberfläche</h3>
 						<ul style="padding-top: 15px;">
-							<li style="margin-bottom: 15px; font-size: 20px;">Anzeigen der Codes nach Spiel und Platform</li>
-							<li style="margin-bottom: 15px; font-size: 20px;">Eingelöste Codes anzeigen (unsere API)</li>
-							<li style="margin-bottom: 15px; font-size: 20px;">Code als Eingelöst markieren (unsere API)</li>
+							<li style="margin-bottom: 15px; font-size: 20px;">Anzeigen der Codes nach Spiel und Platform
+							</li>
+							<li style="margin-bottom: 15px; font-size: 20px;">Eingelöste Codes anzeigen (unsere API)
+							</li>
+							<li style="margin-bottom: 15px; font-size: 20px;">Code als Eingelöst markieren (unsere API)
+							</li>
 							<li style="margin-bottom: 15px; font-size: 20px;">Code in die Zwischenablage kopieren</li>
 							<li style="margin-bottom: 15px; font-size: 20px;">Code auf SHIFT einlösen</li>
 							<hr>
-							<li style="margin-bottom: 15px; font-size: 20px;">SHIFT-Login triggern <br>(ändern oder einloggen)</li>
+							<li style="margin-bottom: 15px; font-size: 20px;">SHIFT-Login triggern <br>(ändern oder
+								einloggen)</li>
 						</ul>
 					</div>
 				</section>
@@ -162,9 +266,12 @@
 					<div style="float: right; width: 30%;">
 						<p style="font-size: 25px; color:aquamarine">Funktionen auf dieser Oberfläche</h3>
 						<ul style="padding-top: 15px;">
-							<li style="margin-bottom: 15px; font-size: 20px;">Anzeigen aller eingelösten Codes (unsere API)</li>
-							<li style="margin-bottom: 15px; font-size: 20px;">Kopieren eines Codes in die Zwischenablage</li>
-							<li style="margin-bottom: 15px; font-size: 20px;">Code aus der Liste der eingelösten Codes entfernen (unsere API)</li>
+							<li style="margin-bottom: 15px; font-size: 20px;">Anzeigen aller eingelösten Codes (unsere
+								API)</li>
+							<li style="margin-bottom: 15px; font-size: 20px;">Kopieren eines Codes in die Zwischenablage
+							</li>
+							<li style="margin-bottom: 15px; font-size: 20px;">Code aus der Liste der eingelösten Codes
+								entfernen (unsere API)</li>
 						</ul>
 					</div>
 				</section>
@@ -173,11 +280,14 @@
 
 			<section>
 				<h2>Nicht umgesetzte Funktionen</h2>
-					<ul style="padding-top: 15px;">
-						<li style="margin-bottom: 15px; font-size: 20px;">Code als HTML-Page teilen: War nur eine komplizierte Art des Kopierens</li>
-						<li style="margin-bottom: 15px; font-size: 20px;">Speichern des SHIFT-Accounts: Datensicherheit - besser nichts im Klartext speichern</li>
-						<li style="margin-bottom: 15px; font-size: 20px;">Manuelles Hinzufügen von Codes durch Admins: Wir können nun unabhängig von der API eigene Tabellen erstellen und diese scrapen lassen</li>
-					</ul>
+				<ul style="padding-top: 15px;">
+					<li style="margin-bottom: 15px; font-size: 20px;">Code als HTML-Page teilen: War nur eine
+						komplizierte Art des Kopierens</li>
+					<li style="margin-bottom: 15px; font-size: 20px;">Speichern des SHIFT-Accounts: Datensicherheit -
+						besser nichts im Klartext speichern</li>
+					<li style="margin-bottom: 15px; font-size: 20px;">Manuelles Hinzufügen von Codes durch Admins: Wir
+						können nun unabhängig von der API eigene Tabellen erstellen und diese scrapen lassen</li>
+				</ul>
 			</section>
 
 			<section>
@@ -186,7 +296,8 @@
 				<img style="width: 30%;" src="images/logos/Beuth-Logo_single.png">
 
 				<p>Beuth Hochschule für Technik Berlin</p>
-				<p><p style="color:aquamarine">Modul:</p> Enterprise Web Development (WiSe 2020/2021)</p>
+				<p>
+				<p style="color:aquamarine">Modul:</p> Enterprise Web Development (WiSe 2020/2021)</p>
 			</section>
 		</div>
 	</div>
